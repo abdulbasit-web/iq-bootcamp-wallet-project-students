@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstarp boiler</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="./fontawesome-free-5.12.0-web/css/all.min.css" />
+    <!-- min.css bootstrap -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- my style -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- min jquery  -->
+    <script src="jquery-3.4.1.min.js"></script>
+    <!-- min.js bootstraop  (min.js + propper.js)-->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Get the current year for the copyright
+      $('#year').text(new Date().getFullYear());
+
+      //Scroll spy
+      $('body').scrollspy({ target: '#main-nav' });
+
+      //Add smooth scrolling
+      $('#main-nav a').on('click', function (e) {
+        //Check for a hash value
+        if (this.hash !== '') {
+          //Prevent default behavior
+          e.preventDefault();
+
+          //store hash
+          const hash = this.hash;
+
+          //Animate smooth scroll
+          $('html , body').animate(
+            {
+              scrollTop: $(hash).offset().top,
+            },
+            800,
+            function () {
+              //Add hash to url after scroll
+              window.location.hash = hash;
+            }
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
