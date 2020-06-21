@@ -1,0 +1,8 @@
+main {
+  min-height: calc(100vh - 72px);
+}
+
+/* wallet svg  */
+.wallet-img {
+  width: 300px;
+}

@@ -12,40 +12,56 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">Wallet App</a>
+
+        <!-- choose Wallet -->
+        <div class="dropdown">
+          <button
+            class="btn btn-info dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            choose wallet
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="d-flex align-items-center justify-content-center">
+      <!-- no wallet page -->
+      <div class="container">
+        <div class="row m-5 justify-content-center">
+          <div class="col text-center">
+            <img src="./img/Wallet.svg" class="wallet-img" alt="no-wallet" />
+            <h3 class="mt-5">Ooops!</h3>
+            <p>You have no wallets, Start by creating one</p>
+            <!-- Button trigger modal -->
+            <button
+              class="btn btn-info btn-lg"
+              type="button"
+              data-toggle="modal"
+              data-target="#createModal"
+            >
+              Create wallet
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
     <!-- min jquery  -->
     <script src="jquery-3.4.1.min.js"></script>
     <!-- min.js bootstraop  (min.js + propper.js)-->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Get the current year for the copyright
-      $('#year').text(new Date().getFullYear());
-
-      //Scroll spy
-      $('body').scrollspy({ target: '#main-nav' });
-
-      //Add smooth scrolling
-      $('#main-nav a').on('click', function (e) {
-        //Check for a hash value
-        if (this.hash !== '') {
-          //Prevent default behavior
-          e.preventDefault();
-
-          //store hash
-          const hash = this.hash;
-
-          //Animate smooth scroll
-          $('html , body').animate(
-            {
-              scrollTop: $(hash).offset().top,
-            },
-            800,
-            function () {
-              //Add hash to url after scroll
-              window.location.hash = hash;
-            }
-          );
-        }
-      });
-    </script>
   </body>
 </html>
