@@ -37,9 +37,9 @@
       </div>
     </nav>
 
-    <main class="d-flex align-items-center justify-content-center">
+    <main class="hide">
       <!-- no wallet page -->
-      <div class="container">
+      <div class="container d-flex align-items-center justify-content-center">
         <div class="row m-5 justify-content-center">
           <div class="col text-center">
             <img src="./img/Wallet.svg" class="wallet-img" alt="no-wallet" />
@@ -59,6 +59,81 @@
       </div>
     </main>
 
+    <main class="">
+      <div class="container my-5">
+        <h1 class="my-5">
+          Wallet Balance: <span class="currenct-type pr-1">$</span
+          ><span class="balance">199999.00</span>
+        </h1>
+
+        <!-- make transaction -->
+        <label for="">Make a transaction</label>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" />
+              <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">$</span>
+              </div>
+              <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">1999999.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ml-3">
+            <div class="row align-items-end">
+              <button class="btn btn-outline-success col">Income</button>
+
+              <button class="btn btn-outline-danger col">Expense</button>
+            </div>
+          </div>
+          <div class="offset-md-4"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="note">Transaction Notes: </label>
+              <input type="text" class="form-control" />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="note">Transaction tags:</label>
+              <input type="text" class="form-control" />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="" class=""></label>
+            <button class="btn btn-secondary btn-block mt-2">Add Transaction</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="tr-item bg-white p-3 mt-4 rounded-10 shadow-sm d-flex flex-column">
+          <div class="d-flex justify-content-between">
+            <h3 class="text-danger">5000</h3>
+            <h5 class="text-muted">Wed jun 17 2017 | 4:58:13 pm</h5>
+          </div>
+          <div>
+            <p class="lead">lunch</p>
+          </div>
+          <div class="d-flex">
+            <span class="badge badge-pill badge-dark m-1">Food</span>
+            <span class="badge badge-pill badge-dark m-1">LifeStyle</span>
+          </div>
+        </div>
+
+        <div class="tr-item bg-white p-3 mt-4 rounded-10 shadow-sm d-flex flex-column">
+          <div class="d-flex justify-content-between">
+            <h3 class="text-danger">5000</h3>
+            <h5 class="text-muted">Wed jun 17 2017 | 4:58:13 pm</h5>
+          </div>
+        </div>
+      </div>
+    </main>
+
     <!-- create wallet modal -->
     <div
       class="modal fade"
@@ -71,16 +146,69 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Create new wallet</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <form action=""></form>
+            <form action="" class="p-1" autocomplete="off">
+              <div class="form-group row">
+                <div class="col-md-3">
+                  <label for="name" class="col-form-label">Name</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" name="name" class="form-control" id="name" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-3">
+                  <label for="name" class="col-form-label">Currency</label>
+                </div>
+                <div class="col-md-9">
+                  <div class="custom-control custom-radio">
+                    <input
+                      type="radio"
+                      id="us-dollar"
+                      name="customRadio"
+                      class="custom-control-input"
+                    />
+                    <label class="custom-control-label" for="us-dollar">US Dollars ($)</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input
+                      type="radio"
+                      id="iraqi-dinars"
+                      name="customRadio"
+                      class="custom-control-input"
+                    />
+                    <label class="custom-control-label" for="iraqi-dinars"
+                      >Iraqi Dinars (IQD)</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-3">
+                  <label for="name" class="col-form-label">Balance</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" name="name" class="form-control" id="name" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-3">
+                  <label for="name" class="col-form-label">Description</label>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" name="name" class="form-control" id="name" />
+                </div>
+              </div>
+            </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-success" data-dismiss="modal">
+            <button type="button" class="btn btn-outline-success" data-dismiss="modal">
               Create Wallet
             </button>
           </div>
